@@ -26,6 +26,7 @@ public class Car
     private Wheel[] wheels;
     private int year_manufacture;
     private String colour;
+    static int cars_created = 0;
     
     private Car(int wheels_count, int wheels_diameter, String colour, int year_manufacture)
     {
@@ -36,6 +37,7 @@ public class Car
         {
             this.wheels[i] = new Wheel(wheels_diameter);
         }
+        Car.cars_created++;
     }
     
     @Override

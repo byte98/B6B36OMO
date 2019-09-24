@@ -28,5 +28,7 @@ public class Main
         
         System.out.println(lorry);
         System.out.println(personal);
+        System.out.println("---------------");
+        System.out.println("Total: " + Car.cars_created);
     }
 }
