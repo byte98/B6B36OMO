@@ -67,7 +67,7 @@ public class OMOSet extends OMOSetBase implements OMOSetView
     /**
      * Function to check, whether element is in set or not
      * @param element Element which should be checked
-     * @return <c>TRUE</c> if element is in the set, <c>FALSE</c> otherwise
+     * @return {@code TRUE} if element is in the set, {@code FALSE} otherwise
      */
     @Override
     public boolean contains(int element)
