@@ -1,0 +1,3 @@
+V HW 02 nevytvářet ve sjednocení Array s prvky oběma množin; jen udržovat referenci na obě množiny
+
+Udržet ukazatele a pak teprve vytvářet kopii
