@@ -91,15 +91,6 @@ public class OMOSetIntersection implements OMOSetView
     @Override
     public OMOSetView copy()
     {
-        OMOSetView reti = null;
-        try
-        {
-            reti = (OMOSetView) this.clone();
-        }
-        catch (CloneNotSupportedException ex)
-        {
-            Logger.getLogger(OMOSetIntersection.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        return reti;
+        return null;
     }
 }

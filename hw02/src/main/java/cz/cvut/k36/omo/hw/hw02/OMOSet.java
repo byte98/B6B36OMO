@@ -60,7 +60,7 @@ public class OMOSet extends OMOSetBase implements OMOSetView
     {
         if (this.elements.contains(element))
         {
-            this.elements.remove(element);
+            this.elements.remove((Object) element);
         }
     }
     
@@ -99,15 +99,6 @@ public class OMOSet extends OMOSetBase implements OMOSetView
     @Override
     public OMOSetView copy()
     {
-        OMOSetView reti = null;
-        try
-        {
-            reti = (OMOSetView) this.clone();
-        }
-        catch (CloneNotSupportedException ex)
-        {
-            Logger.getLogger(OMOSet.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        return reti;
+        return null;
     }
 }

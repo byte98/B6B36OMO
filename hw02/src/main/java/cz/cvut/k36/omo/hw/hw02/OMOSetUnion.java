@@ -93,15 +93,7 @@ public class OMOSetUnion implements OMOSetView
     @Override
     public OMOSetView copy()
     {
-        OMOSetView reti = null;
-        try
-        {
-            reti = (OMOSetView) this.clone();
-        } catch (CloneNotSupportedException ex)
-        {
-            Logger.getLogger(OMOSetUnion.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        return reti;
+        return null;
     }
     
     
