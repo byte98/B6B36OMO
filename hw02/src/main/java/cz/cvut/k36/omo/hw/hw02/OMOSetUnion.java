@@ -93,7 +93,20 @@ public class OMOSetUnion implements OMOSetView
     @Override
     public OMOSetView copy()
     {
-        return null;
+        OMOSet setA = new OMOSet();
+        for (int element: this.setA.toArray())
+        {
+            setA.add(element);
+        }
+        
+        OMOSet setB = new OMOSet();
+        for (int element: this.setB.toArray())
+        {
+            setB.add(element);
+        }
+        
+        OMOSetUnion reti = new OMOSetUnion(setA, setB);
+        return reti;
     }
     
     

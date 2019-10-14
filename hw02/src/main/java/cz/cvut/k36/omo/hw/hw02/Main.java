@@ -81,6 +81,15 @@ public class Main
         Main.printSet(even);
         System.out.println("");
         
+        OMOSetView setACopy = setA.copy();
+        setA.add(100);
+        System.out.print("A_extn:=");
+        Main.printSet(setA);
+        System.out.println("");
+        System.out.print("A_copy:=");
+        Main.printSet(setACopy);
+        System.out.println("");
+        
         
     }
     

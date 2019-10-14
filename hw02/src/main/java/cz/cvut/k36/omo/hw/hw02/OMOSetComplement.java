@@ -85,7 +85,22 @@ public class OMOSetComplement implements OMOSetView
     @Override
     public OMOSetView copy()
     {
-        return null;
+        OMOSet setA = new OMOSet();
+        OMOSet setB = new OMOSet();
+        
+        for (int elementA: this.setA.toArray())
+        {
+            setA.add(elementA);
+        }
+        
+        for (int elementB: this.setB.toArray())
+        {
+            setB.add(elementB);
+        }
+        
+        OMOSetComplement reti = new OMOSetComplement(setA, setB);
+        return reti;
+                     
     }
     
 }

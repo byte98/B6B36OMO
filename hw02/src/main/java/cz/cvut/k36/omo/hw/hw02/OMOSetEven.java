@@ -82,7 +82,13 @@ public class OMOSetEven implements OMOSetView
     @Override
     public OMOSetView copy()
     {
-        return null;
+        OMOSet retiSet = new OMOSet();
+        for (int element: this.set.toArray())
+        {
+            retiSet.add(element);
+        }
+        OMOSetEven reti = new OMOSetEven(retiSet);
+        return reti;
     }
     
 }

@@ -99,6 +99,13 @@ public class OMOSet extends OMOSetBase implements OMOSetView
     @Override
     public OMOSetView copy()
     {
-        return null;
+        OMOSet reti = new OMOSet();
+        
+        for (int element: this.toArray())
+        {
+            reti.add(element);
+        }
+        
+        return reti;
     }
 }
