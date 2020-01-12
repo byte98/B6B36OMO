@@ -10,52 +10,17 @@ public class Homework4 extends MessageVisitor {
     // zde doplnte svuj kod
 
     @Override
-    public boolean visitHaveMessage(HaveMessage message)
-    {
-        boolean reti = false;
-        
-        //Create new array, where will be marked availability of block
-        
-        //Setting appropriate size of new array
-        int msg_idx = message.getBlockIndex();
-        int new_map_len = msg_idx + 2;
-        boolean[] actual_map = this.peer.peers2BlocksMap.get(message.getSender());
-        boolean[] new_map = new boolean[new_map_len];
-        //Set availability of each block
-        for (int idx = 0; idx < new_map.length; idx++)
-        {
-            if (idx < actual_map.length)            //Block availability has been marked in previous array
-            {
-                new_map[idx] = actual_map[idx];
-            }
-            if (idx == message.getBlockIndex())     //Actual block which is available
-            {
-                new_map[idx] = true;
-            }
-            else
-            {
-                new_map[idx] = false;               //Default for any other block
-            }
-        }        
-        //Replace availability in map
-        this.peer.peers2BlocksMap.remove(message.getSender());
-        this.peer.peers2BlocksMap.put(message.getSender(), new_map);
-        return reti;
-    }
+        public boolean visitHaveMessage(HaveMessage message) {
+    this.peer.peers2BlocksMap.get(message.getSender())[message.blockIndex] = true;
+            return false;
+        }
 
     @Override
-    public boolean visitRequestMessage(RequestMessage message)
-    {
-        boolean reti = false;
-        
-        //Checks, if i have requested block
-        boolean[] map = this.peer.peers2BlocksMap.get(message.getSender());
-        if (map.length > message.getBlockIndex() && map[message.getBlockIndex()] == true)
-        {
-            //If i have requested block, send it to sender of request
+    public boolean visitRequestMessage(RequestMessage message) {
+        if (this.peer.data[message.getBlockIndex()] != null) {
             message.getSender().piece(this.peer, message.getBlockIndex(), this.peer.data[message.getBlockIndex()]);
-        } 
-        return reti;
+        }
+        return false;
     }
 
     @Override

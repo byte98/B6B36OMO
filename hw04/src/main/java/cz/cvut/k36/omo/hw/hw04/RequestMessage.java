@@ -1,5 +1,6 @@
 package cz.cvut.k36.omo.hw.hw04;
 
+
 public class RequestMessage extends Message {
     private final int blockIndex;
  

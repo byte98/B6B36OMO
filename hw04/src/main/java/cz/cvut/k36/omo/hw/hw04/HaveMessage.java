@@ -1,7 +1,7 @@
 package cz.cvut.k36.omo.hw.hw04;
 
 public class HaveMessage extends Message {
-    private final int blockIndex;
+    final int blockIndex;
  
     public HaveMessage(int blockIndex, PeerInterface sender) {
         super(sender);
